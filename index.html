@@ -199,13 +199,14 @@
         }
 
         .service-card {
-            background: white;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border: 1px solid #e2e8f0;
             border-radius: 12px;
             padding: 2rem;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            color: white;
         }
 
         .service-card::before {
@@ -226,13 +227,18 @@
         .service-title {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: #333;
+            color: white;
         }
 
         .service-price {
             font-size: 2rem;
             font-weight: bold;
-            color: #667eea;
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 1rem;
         }
 
@@ -251,19 +257,20 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: #4ade80;
+            color: #FFD700;
             font-weight: bold;
         }
 
         .service-impact {
-            background: #f1f5f9;
+            background: rgba(255, 255, 255, 0.1);
             padding: 1rem;
             border-radius: 8px;
             margin-top: 1rem;
+            color: white;
         }
 
         .service-impact strong {
-            color: #667eea;
+            color: #FFD700;
         }
 
         /* Platforms Section */
@@ -1068,6 +1075,13 @@
                         if (entry.isIntersecting) {
                             const target = entry.target;
                             const finalValue = target.textContent;
+                            
+                            // Skip animation for non-numeric values like "15-50" and "8,000+"
+                            if (finalValue.includes('-') || finalValue.includes(',') || finalValue.includes('+')) {
+                                observer.unobserve(target);
+                                return;
+                            }
+                            
                             const isPercentage = finalValue.includes('%');
                             const numericValue = parseInt(finalValue.replace(/[^\d]/g, ''));
                             
@@ -1081,7 +1095,7 @@
                                 }
                                 target.textContent = isPercentage ? 
                                     Math.floor(current) + '%' : 
-                                    finalValue.replace(/\d+/, Math.floor(current));
+                                    Math.floor(current);
                             }, 30);
                             
                             observer.unobserve(target);
