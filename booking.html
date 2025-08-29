@@ -21,7 +21,7 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 2rem;
         }
@@ -30,7 +30,7 @@
         .header {
             background: linear-gradient(135deg, #1e40af 0%, #3730a3 100%);
             color: white;
-            padding: 2rem 0;
+            padding: 2rem;
             text-align: center;
             margin-bottom: 2rem;
             border-radius: 12px;
@@ -48,11 +48,24 @@
             margin: 0 auto;
         }
 
+        .back-link {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .back-link:hover {
+            color: white;
+        }
+
         /* Progress Steps */
         .progress-container {
             background: white;
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 2rem;
             margin-bottom: 2rem;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
@@ -60,7 +73,7 @@
         .progress-steps {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
         }
 
         .step {
@@ -106,7 +119,6 @@
             height: 4px;
             background: #e2e8f0;
             border-radius: 2px;
-            margin-top: 1rem;
             overflow: hidden;
         }
 
@@ -117,21 +129,24 @@
             transition: width 0.3s ease;
         }
 
-        /* Form Sections */
-        .form-container {
+        /* Main Form Container - This ensures EVERYTHING stays inside */
+        .form-wrapper {
             background: white;
             border-radius: 12px;
-            padding: 2rem;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             overflow: hidden;
             position: relative;
         }
 
+        .form-content {
+            padding: 3rem;
+            width: 100%;
+            min-height: 500px;
+        }
+
         .form-section {
             display: none;
             animation: fadeIn 0.3s ease;
-            width: 100%;
-            box-sizing: border-box;
         }
 
         .form-section.active {
@@ -144,7 +159,7 @@
         }
 
         .section-title {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: #1e40af;
             margin-bottom: 1rem;
         }
@@ -155,19 +170,18 @@
             font-size: 1.1rem;
         }
 
-        /* Form Elements */
+        /* Form Elements - All contained within white box */
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             width: 100%;
-            position: relative;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             font-weight: 600;
             color: #374151;
-            width: 100%;
+            font-size: 1rem;
         }
 
         .required {
@@ -178,12 +192,12 @@
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 12px 16px;
+            padding: 16px;
             border: 2px solid #e2e8f0;
             border-radius: 8px;
             font-size: 1rem;
             transition: border-color 0.3s ease;
-            box-sizing: border-box;
+            font-family: inherit;
         }
 
         .form-group input:focus,
@@ -195,63 +209,70 @@
 
         .form-group textarea {
             resize: vertical;
-            height: 100px;
+            height: 120px;
         }
 
-        /* Checkbox and Radio Groups */
-        .checkbox-grid {
+        .form-group small {
+            color: #64748b;
+            font-size: 0.9rem;
+            display: block;
+            margin-top: 0.3rem;
+        }
+
+        /* Checkbox and Radio Groups - Fully contained */
+        .options-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 0.8rem;
-            margin-top: 0.5rem;
-            width: 100%;
-            box-sizing: border-box;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
         }
 
-        .checkbox-item,
-        .radio-item {
+        .option-item {
             display: flex;
             align-items: center;
-            padding: 0.8rem;
+            padding: 1rem;
             background: #f8fafc;
             border: 2px solid #e2e8f0;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
-            width: 100%;
-            box-sizing: border-box;
         }
 
-        .checkbox-item:hover,
-        .radio-item:hover {
+        .option-item:hover {
             border-color: #1e40af;
             background: #eff6ff;
         }
 
-        .checkbox-item input,
-        .radio-item input {
+        .option-item.selected {
+            border-color: #1e40af;
+            background: #eff6ff;
+        }
+
+        .option-item input {
             width: auto;
             margin-right: 0.8rem;
             transform: scale(1.2);
         }
 
-        .checkbox-item label,
-        .radio-item label {
+        .option-item label {
             margin: 0;
             font-weight: normal;
             cursor: pointer;
+            flex: 1;
         }
 
-        /* Buttons */
-        .button-group {
+        /* Navigation Buttons - Contained within white box */
+        .form-navigation {
             display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
             justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #e2e8f0;
         }
 
         .btn {
-            padding: 12px 24px;
+            padding: 14px 28px;
             border: none;
             border-radius: 8px;
             font-size: 1rem;
@@ -288,10 +309,14 @@
             cursor: not-allowed;
         }
 
+        .btn-nav {
+            min-width: 120px;
+        }
+
         /* Success Page */
         .success-container {
             text-align: center;
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
         }
 
         .success-icon {
@@ -308,13 +333,13 @@
         }
 
         .success-title {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: #1e40af;
             margin-bottom: 1rem;
         }
 
         .success-text {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #64748b;
             margin-bottom: 2rem;
         }
@@ -324,7 +349,7 @@
             border: 2px solid #bfdbfe;
             border-radius: 12px;
             padding: 2rem;
-            margin-top: 2rem;
+            margin: 2rem 0;
         }
 
         .next-steps h3 {
@@ -339,7 +364,7 @@
         }
 
         .next-steps li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             padding-left: 1.5rem;
             position: relative;
         }
@@ -362,34 +387,40 @@
                 font-size: 2rem;
             }
 
-            .checkbox-grid {
-                grid-template-columns: 1fr;
-                gap: 0.8rem;
+            .form-content {
+                padding: 2rem;
             }
 
-            .button-group {
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-navigation {
                 flex-direction: column;
                 gap: 1rem;
             }
 
             .progress-steps {
-                flex-direction: column;
+                flex-wrap: wrap;
                 gap: 1rem;
             }
+        }
 
-            .form-container {
+        @media (max-width: 480px) {
+            .form-content {
                 padding: 1.5rem;
-                margin: 0;
             }
 
-            .form-section {
-                padding: 0;
-                margin: 0;
+            .header {
+                padding: 1.5rem;
             }
 
-            .checkbox-item,
-            .radio-item {
-                padding: 0.6rem;
+            .progress-container {
+                padding: 1.5rem;
             }
         }
     </style>
@@ -398,11 +429,7 @@
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <div style="text-align: left; margin-bottom: 1rem;">
-                <a href="index.html" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center;">
-                    ← Back to Main Site
-                </a>
-            </div>
+            <a href="index.html" class="back-link">← Back to Main Site</a>
             <h1>Free Automation Audit</h1>
             <p>Help us understand your business so we can prepare a customized automation strategy for your 90-minute audit session.</p>
         </div>
@@ -432,241 +459,299 @@
             </div>
         </div>
 
-        <!-- Form Container -->
-        <div class="form-container">
-            <form id="audit-questionnaire">
-                <!-- Step 1: Contact Information -->
-                <div class="form-section active" data-section="1">
-                    <h2 class="section-title">Let's start with the basics</h2>
-                    <p class="section-subtitle">We'll use this information to schedule your audit and send you relevant resources.</p>
-                    
-                    <div class="form-group">
-                        <label>Full Name <span class="required">*</span></label>
-                        <input type="text" name="fullName" required placeholder="Enter your full name">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Budget Range for Automation <span class="required">*</span></label>
-                        <select name="budget" required>
-                            <option value="">Select budget range</option>
-                            <option value="under-3k">Under $3,000</option>
-                            <option value="3k-7k">$3,000 - $7,000</option>
-                            <option value="7k-12k">$7,000 - $12,000</option>
-                            <option value="12k-20k">$12,000 - $20,000</option>
-                            <option value="20k+">$20,000+</option>
-                            <option value="not-sure">Not sure yet</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Implementation Timeline</label>
-                        <select name="timeline">
-                            <option value="">When would you like to start?</option>
-                            <option value="asap">As soon as possible</option>
-                            <option value="1-3months">1-3 months</option>
-                            <option value="3-6months">3-6 months</option>
-                            <option value="6months+">6+ months</option>
-                            <option value="exploring">Just exploring options</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Brief Business Description</label>
-                        <textarea name="businessDescription" placeholder="Tell us what your business does and what makes it unique..."></textarea>
-                    </div>
-                </div>
-
-                <!-- Step 3: Current Processes -->
-                <div class="form-section" data-section="3">
-                    <h2 class="section-title">Your current workflow</h2>
-                    <p class="section-subtitle">Help us understand what's working and what's causing headaches.</p>
-                    
-                    <div class="form-group">
-                        <label>What areas take up the most time? <span class="required">*</span><br>
-                        <small style="color: #64748b;">Select all that apply</small></label>
-                        <div class="checkbox-grid">
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="timeAreas" value="data-entry" id="data-entry">
-                                <label for="data-entry">Data Entry & Management</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="timeAreas" value="client-communication" id="client-communication">
-                                <label for="client-communication">Client Communication</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="timeAreas" value="scheduling" id="scheduling">
-                                <label for="scheduling">Scheduling & Appointments</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="timeAreas" value="invoicing" id="invoicing">
-                                <label for="invoicing">Invoicing & Payments</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="timeAreas" value="reporting" id="reporting">
-                                <label for="reporting">Reports & Analytics</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="timeAreas" value="document-management" id="document-management">
-                                <label for="document-management">Document Management</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="timeAreas" value="lead-management" id="lead-management">
-                                <label for="lead-management">Lead Management</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="timeAreas" value="inventory" id="inventory">
-                                <label for="inventory">Inventory Management</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="timeAreas" value="employee-management" id="employee-management">
-                                <label for="employee-management">Employee Management</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="timeAreas" value="quality-control" id="quality-control">
-                                <label for="quality-control">Quality Control</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Current Tools & Software <span class="required">*</span><br>
-                        <small style="color: #64748b;">Select all that apply</small></label>
-                        <div class="checkbox-grid">
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="currentTools" value="excel" id="excel">
-                                <label for="excel">Microsoft Excel</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="currentTools" value="google-sheets" id="google-sheets">
-                                <label for="google-sheets">Google Sheets</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="currentTools" value="quickbooks" id="quickbooks">
-                                <label for="quickbooks">QuickBooks</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="currentTools" value="crm" id="crm">
-                                <label for="crm">CRM Software</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="currentTools" value="email" id="email">
-                                <label for="email">Email (Outlook/Gmail)</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="currentTools" value="communication" id="communication">
-                                <label for="communication">Slack/Teams</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="currentTools" value="wordpress" id="wordpress">
-                                <label for="wordpress">WordPress/Website</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="currentTools" value="industry-specific" id="industry-specific">
-                                <label for="industry-specific">Industry-Specific Software</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="currentTools" value="paper-based" id="paper-based">
-                                <label for="paper-based">Paper-Based Systems</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="currentTools" value="other" id="other-tools">
-                                <label for="other-tools">Other</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>What's your biggest process frustration? <span class="required">*</span></label>
-                        <textarea name="biggestFrustration" required placeholder="Describe what slows your team down or causes the most headaches..."></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label>If your business doubled tomorrow, what process would struggle most?</label>
-                        <textarea name="scalingChallenge" placeholder="Tell us what would break first if you had twice the customers/work..."></textarea>
-                    </div>
-                </div>
-
-                <!-- Step 4: Goals & Vision -->
-                <div class="form-section" data-section="4">
-                    <h2 class="section-title">Your automation goals</h2>
-                    <p class="section-subtitle">Let's understand what success looks like for your business.</p>
-                    
-                    <div class="form-group">
-                        <label>If automation saved you time, how would you use it? <span class="required">*</span></label>
-                        <div class="checkbox-grid">
-                            <div class="radio-item">
-                                <input type="radio" name="timeUsage" value="serve-more-clients" id="serve-more">
-                                <label for="serve-more">Serve more clients/customers</label>
-                            </div>
-                            <div class="radio-item">
-                                <input type="radio" name="timeUsage" value="reduce-overtime" id="reduce-overtime">
-                                <label for="reduce-overtime">Reduce overtime/workload on staff</label>
-                            </div>
-                            <div class="radio-item">
-                                <input type="radio" name="timeUsage" value="improve-experience" id="improve-experience">
-                                <label for="improve-experience">Improve customer experience</label>
-                            </div>
-                            <div class="radio-item">
-                                <input type="radio" name="timeUsage" value="focus-growth" id="focus-growth">
-                                <label for="focus-growth">Focus on strategy & growth</label>
-                            </div>
-                            <div class="radio-item">
-                                <input type="radio" name="timeUsage" value="reduce-errors" id="reduce-errors">
-                                <label for="reduce-errors">Reduce errors & improve quality</label>
-                            </div>
-                            <div class="radio-item">
-                                <input type="radio" name="timeUsage" value="other-time" id="other-time">
-                                <label for="other-time">Other</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>What's one process you wish ran automatically? <span class="required">*</span></label>
-                        <textarea name="dreamAutomation" required placeholder="Describe something you wish would happen without anyone touching it..."></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label>What would success from this audit look like?</label>
-                        <textarea name="successDefinition" placeholder="What outcomes would make this audit worthwhile for you?"></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Additional Comments or Questions</label>
-                        <textarea name="additionalComments" placeholder="Anything else you'd like us to know before our meeting?"></textarea>
-                    </div>
-                </div>
-
-                <!-- Success Page -->
-                <div class="form-section" data-section="success" style="display: none;">
-                    <div class="success-container">
-                        <div class="success-icon">✓</div>
-                        <h2 class="success-title">Thank You!</h2>
-                        <p class="success-text">Your automation audit request has been submitted successfully. We'll review your responses and contact you within 24 hours to schedule your personalized audit session.</p>
+        <!-- Main Form Container - Everything inside white box -->
+        <div class="form-wrapper">
+            <div class="form-content">
+                <form id="audit-questionnaire">
+                    <!-- Step 1: Contact Information -->
+                    <div class="form-section active" data-section="1">
+                        <h2 class="section-title">Let's start with the basics</h2>
+                        <p class="section-subtitle">We'll use this information to schedule your audit and send you relevant resources.</p>
                         
-                        <div class="next-steps">
-                            <h3>What happens next?</h3>
-                            <ul>
-                                <li>We'll review your questionnaire responses</li>
-                                <li>Contact you within 24 hours to schedule</li>
-                                <li>Send calendar invite for your 90-minute audit</li>
-                                <li>Prepare customized recommendations</li>
-                                <li>Deliver your personalized automation roadmap</li>
-                            </ul>
+                        <div class="form-group">
+                            <label>Full Name <span class="required">*</span></label>
+                            <input type="text" name="fullName" required placeholder="Enter your full name">
                         </div>
 
-                        <a href="index.html" class="btn btn-secondary" style="margin-top: 1rem; margin-right: 1rem;">← Back to Main Site</a>
-                        <a href="/" class="btn btn-primary" style="margin-top: 2rem;">Return to Homepage</a>
-                    </div>
-                </div>
+                        <div class="form-group">
+                            <label>Email Address <span class="required">*</span></label>
+                            <input type="email" name="email" required placeholder="your@email.com">
+                        </div>
 
-                <!-- Navigation Buttons -->
-                <div class="button-group" id="form-navigation">
-                    <button type="button" class="btn btn-secondary" id="prev-btn" style="display: none;">← Previous</button>
-                    <button type="button" class="btn btn-primary" id="next-btn">Next →</button>
-                    <button type="submit" class="btn btn-primary" id="submit-btn" style="display: none;">Submit Audit Request</button>
-                </div>
-            </form>
+                        <div class="form-group">
+                            <label>Phone Number <span class="required">*</span></label>
+                            <input type="tel" name="phone" required placeholder="(412) 555-0123">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Company Name <span class="required">*</span></label>
+                            <input type="text" name="company" required placeholder="Your Company Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Website (if applicable)</label>
+                            <input type="url" name="website" placeholder="https://yourwebsite.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Preferred Meeting Type <span class="required">*</span></label>
+                            <select name="meetingType" required>
+                                <option value="">Select meeting preference</option>
+                                <option value="video-call">Video Call (Zoom/Teams)</option>
+                                <option value="phone-call">Phone Call</option>
+                                <option value="in-person">In-Person Meeting (Pittsburgh area)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Business Details -->
+                    <div class="form-section" data-section="2">
+                        <h2 class="section-title">Tell us about your business</h2>
+                        <p class="section-subtitle">This helps us understand your scale and recommend the right automation approach.</p>
+                        
+                        <div class="form-group">
+                            <label>Number of Employees <span class="required">*</span></label>
+                            <select name="employees" required>
+                                <option value="">Select business size</option>
+                                <option value="1-5">1-5 employees</option>
+                                <option value="6-15">6-15 employees</option>
+                                <option value="16-30">16-30 employees</option>
+                                <option value="31-50">31-50 employees</option>
+                                <option value="51-100">51-100 employees</option>
+                                <option value="100+">100+ employees</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Industry <span class="required">*</span></label>
+                            <select name="industry" required>
+                                <option value="">Select your industry</option>
+                                <option value="real-estate">Real Estate</option>
+                                <option value="healthcare">Healthcare/Medical</option>
+                                <option value="auto-repair">Auto Repair/Automotive</option>
+                                <option value="professional-services">Professional Services</option>
+                                <option value="construction">Construction/Trades</option>
+                                <option value="manufacturing">Manufacturing</option>
+                                <option value="retail">Retail</option>
+                                <option value="restaurant">Restaurant/Food Service</option>
+                                <option value="legal">Legal Services</option>
+                                <option value="accounting">Accounting/Finance</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Budget Range for Automation <span class="required">*</span></label>
+                            <select name="budget" required>
+                                <option value="">Select budget range</option>
+                                <option value="under-3k">Under $3,000</option>
+                                <option value="3k-7k">$3,000 - $7,000</option>
+                                <option value="7k-12k">$7,000 - $12,000</option>
+                                <option value="12k-20k">$12,000 - $20,000</option>
+                                <option value="20k+">$20,000+</option>
+                                <option value="not-sure">Not sure yet</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Implementation Timeline</label>
+                            <select name="timeline">
+                                <option value="">When would you like to start?</option>
+                                <option value="asap">As soon as possible</option>
+                                <option value="1-3months">1-3 months</option>
+                                <option value="3-6months">3-6 months</option>
+                                <option value="6months+">6+ months</option>
+                                <option value="exploring">Just exploring options</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Brief Business Description</label>
+                            <textarea name="businessDescription" placeholder="Tell us what your business does and what makes it unique..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Current Processes -->
+                    <div class="form-section" data-section="3">
+                        <h2 class="section-title">Your current workflow</h2>
+                        <p class="section-subtitle">Help us understand what's working and what's causing headaches.</p>
+                        
+                        <div class="form-group">
+                            <label>What areas take up the most time? <span class="required">*</span></label>
+                            <small>Select all that apply</small>
+                            <div class="options-grid">
+                                <div class="option-item">
+                                    <input type="checkbox" name="timeAreas" value="data-entry" id="data-entry">
+                                    <label for="data-entry">Data Entry & Management</label>
+                                </div>
+                                <div class="option-item">
+                                    <input type="checkbox" name="timeAreas" value="client-communication" id="client-communication">
+                                    <label for="client-communication">Client Communication</label>
+                                </div>
+                                <div class="option-item">
+                                    <input type="checkbox" name="timeAreas" value="scheduling" id="scheduling">
+                                    <label for="scheduling">Scheduling & Appointments</label>
+                                </div>
+                                <div class="option-item">
+                                    <input type="checkbox" name="timeAreas" value="invoicing" id="invoicing">
+                                    <label for="invoicing">Invoicing & Payments</label>
+                                </div>
+                                <div class="option-item">
+                                    <input type="checkbox" name="timeAreas" value="reporting" id="reporting">
+                                    <label for="reporting">Reports & Analytics</label>
+                                </div>
+                                <div class="option-item">
+                                    <input type="checkbox" name="timeAreas" value="document-management" id="document-management">
+                                    <label for="document-management">Document Management</label>
+                                </div>
+                                <div class="option-item">
+                                    <input type="checkbox" name="timeAreas" value="lead-management" id="lead-management">
+                                    <label for="lead-management">Lead Management</label>
+                                </div>
+                                <div class="option-item">
+                                    <input type="checkbox" name="timeAreas" value="inventory" id="inventory">
+                                    <label for="inventory">Inventory Management</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Current Tools & Software <span class="required">*</span></label>
+                            <small>Select all that apply</small>
+                            <div class="options-grid">
+                                <div class="option-item">
+                                    <input type="checkbox" name="currentTools" value="excel" id="excel">
+                                    <label for="excel">Microsoft Excel</label>
+                                </div>
+                                <div class="option-item">
+                                    <input type="checkbox" name="currentTools" value="google-sheets" id="google-sheets">
+                                    <label for="google-sheets">Google Sheets</label>
+                                </div>
+                                <div class="option-item">
+                                    <input type="checkbox" name="currentTools" value="quickbooks" id="quickbooks">
+                                    <label for="quickbooks">QuickBooks</label>
+                                </div>
+                                <div class="option-item">
+                                    <input type="checkbox" name="currentTools" value="crm" id="crm">
+                                    <label for="crm">CRM Software</label>
+                                </div>
+                                <div class="option-item">
+                                    <input type="checkbox" name="currentTools" value="email" id="email">
+                                    <label for="email">Email (Outlook/Gmail)</label>
+                                </div>
+                                <div class="option-item">
+                                    <input type="checkbox" name="currentTools" value="communication" id="communication">
+                                    <label for="communication">Slack/Teams</label>
+                                </div>
+                                <div class="option-item">
+                                    <input type="checkbox" name="currentTools" value="industry-specific" id="industry-specific">
+                                    <label for="industry-specific">Industry-Specific Software</label>
+                                </div>
+                                <div class="option-item">
+                                    <input type="checkbox" name="currentTools" value="paper-based" id="paper-based">
+                                    <label for="paper-based">Paper-Based Systems</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>What's your biggest process frustration? <span class="required">*</span></label>
+                            <textarea name="biggestFrustration" required placeholder="Describe what slows your team down or causes the most headaches..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>If your business doubled tomorrow, what process would struggle most?</label>
+                            <textarea name="scalingChallenge" placeholder="Tell us what would break first if you had twice the customers/work..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Goals & Vision -->
+                    <div class="form-section" data-section="4">
+                        <h2 class="section-title">Your automation goals</h2>
+                        <p class="section-subtitle">Let's understand what success looks like for your business.</p>
+                        
+                        <div class="form-group">
+                            <label>If automation saved you time, how would you use it? <span class="required">*</span></label>
+                            <div class="options-grid">
+                                <div class="option-item">
+                                    <input type="radio" name="timeUsage" value="serve-more-clients" id="serve-more">
+                                    <label for="serve-more">Serve more clients/customers</label>
+                                </div>
+                                <div class="option-item">
+                                    <input type="radio" name="timeUsage" value="reduce-overtime" id="reduce-overtime">
+                                    <label for="reduce-overtime">Reduce overtime/workload on staff</label>
+                                </div>
+                                <div class="option-item">
+                                    <input type="radio" name="timeUsage" value="improve-experience" id="improve-experience">
+                                    <label for="improve-experience">Improve customer experience</label>
+                                </div>
+                                <div class="option-item">
+                                    <input type="radio" name="timeUsage" value="focus-growth" id="focus-growth">
+                                    <label for="focus-growth">Focus on strategy & growth</label>
+                                </div>
+                                <div class="option-item">
+                                    <input type="radio" name="timeUsage" value="reduce-errors" id="reduce-errors">
+                                    <label for="reduce-errors">Reduce errors & improve quality</label>
+                                </div>
+                                <div class="option-item">
+                                    <input type="radio" name="timeUsage" value="other-time" id="other-time">
+                                    <label for="other-time">Other</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>What's one process you wish ran automatically? <span class="required">*</span></label>
+                            <textarea name="dreamAutomation" required placeholder="Describe something you wish would happen without anyone touching it..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>What would success from this audit look like?</label>
+                            <textarea name="successDefinition" placeholder="What outcomes would make this audit worthwhile for you?"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Additional Comments or Questions</label>
+                            <textarea name="additionalComments" placeholder="Anything else you'd like us to know before our meeting?"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Success Page -->
+                    <div class="form-section" data-section="success" style="display: none;">
+                        <div class="success-container">
+                            <div class="success-icon">✓</div>
+                            <h2 class="success-title">Thank You!</h2>
+                            <p class="success-text">Your automation audit request has been submitted successfully. We'll review your responses and contact you within 24 hours to schedule your personalized audit session.</p>
+                            
+                            <div class="next-steps">
+                                <h3>What happens next?</h3>
+                                <ul>
+                                    <li>We'll review your questionnaire responses</li>
+                                    <li>Contact you within 24 hours to schedule</li>
+                                    <li>Send calendar invite for your 90-minute audit</li>
+                                    <li>Prepare customized recommendations</li>
+                                    <li>Deliver your personalized automation roadmap</li>
+                                </ul>
+                            </div>
+
+                            <div style="margin-top: 2rem;">
+                                <a href="index.html" class="btn btn-secondary">← Back to Main Site</a>
+                                <a href="/" class="btn btn-primary" style="margin-left: 1rem;">Return to Homepage</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons - Inside white container -->
+                    <div class="form-navigation" id="form-navigation">
+                        <button type="button" class="btn btn-secondary btn-nav" id="prev-btn" style="visibility: hidden;">← Previous</button>
+                        <div style="text-align: center; color: #64748b; font-size: 0.9rem;" id="step-indicator">
+                            Step 1 of 4
+                        </div>
+                        <button type="button" class="btn btn-primary btn-nav" id="next-btn">Next →</button>
+                        <button type="submit" class="btn btn-primary btn-nav" id="submit-btn" style="display: none;">Submit Request</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -680,6 +765,7 @@
                 this.nextBtn = document.getElementById('next-btn');
                 this.submitBtn = document.getElementById('submit-btn');
                 this.progressFill = document.querySelector('.progress-fill');
+                this.stepIndicator = document.getElementById('step-indicator');
                 
                 this.init();
             }
@@ -688,15 +774,34 @@
                 this.updateProgress();
                 this.bindEvents();
                 this.updateButtons();
+                this.bindOptionSelections();
             }
 
             bindEvents() {
                 this.nextBtn.addEventListener('click', () => this.nextStep());
                 this.prevBtn.addEventListener('click', () => this.prevStep());
                 this.form.addEventListener('submit', (e) => this.handleSubmit(e));
-
-                // Add real-time validation
                 this.form.addEventListener('change', () => this.updateButtons());
+            }
+
+            bindOptionSelections() {
+                // Add visual feedback for checkbox/radio selections
+                document.querySelectorAll('.option-item input').forEach(input => {
+                    input.addEventListener('change', function() {
+                        const item = this.closest('.option-item');
+                        if (this.type === 'checkbox') {
+                            item.classList.toggle('selected', this.checked);
+                        } else if (this.type === 'radio') {
+                            // Remove selected class from all radio items with same name
+                            document.querySelectorAll(`input[name="${this.name}"]`).forEach(radio => {
+                                radio.closest('.option-item').classList.remove('selected');
+                            });
+                            if (this.checked) {
+                                item.classList.add('selected');
+                            }
+                        }
+                    });
+                });
             }
 
             nextStep() {
@@ -705,6 +810,8 @@
                         this.currentStep++;
                         this.updateStep();
                     }
+                } else {
+                    this.showValidationMessage();
                 }
             }
 
@@ -728,13 +835,19 @@
                 this.updateProgress();
                 this.updateButtons();
 
-                // Scroll to top
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                // Scroll to top of form
+                document.querySelector('.form-wrapper').scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
             }
 
             updateProgress() {
                 const progressPercentage = (this.currentStep / this.totalSteps) * 100;
                 this.progressFill.style.width = `${progressPercentage}%`;
+
+                // Update step indicator
+                this.stepIndicator.textContent = `Step ${this.currentStep} of ${this.totalSteps}`;
 
                 // Update step indicators
                 document.querySelectorAll('.step').forEach((step, index) => {
@@ -752,7 +865,8 @@
             updateButtons() {
                 const isValid = this.validateCurrentStep();
                 
-                this.prevBtn.style.display = this.currentStep === 1 ? 'none' : 'block';
+                // Previous button visibility
+                this.prevBtn.style.visibility = this.currentStep === 1 ? 'hidden' : 'visible';
                 
                 if (this.currentStep === this.totalSteps) {
                     this.nextBtn.style.display = 'none';
@@ -771,7 +885,13 @@
                 let isValid = true;
 
                 requiredFields.forEach(field => {
-                    if (field.type === 'checkbox' || field.type === 'radio') {
+                    if (field.type === 'checkbox') {
+                        const name = field.name;
+                        const checkedItems = currentSection.querySelectorAll(`[name="${name}"]:checked`);
+                        if (checkedItems.length === 0) {
+                            isValid = false;
+                        }
+                    } else if (field.type === 'radio') {
                         const name = field.name;
                         const checkedItems = currentSection.querySelectorAll(`[name="${name}"]:checked`);
                         if (checkedItems.length === 0) {
@@ -787,11 +907,44 @@
                 return isValid;
             }
 
+            showValidationMessage() {
+                // Create a temporary validation message
+                const message = document.createElement('div');
+                message.style.cssText = `
+                    background: #fee2e2;
+                    border: 1px solid #fecaca;
+                    color: #dc2626;
+                    padding: 1rem;
+                    border-radius: 8px;
+                    margin: 1rem 0;
+                    text-align: center;
+                    font-weight: 600;
+                `;
+                message.textContent = 'Please fill in all required fields before continuing.';
+
+                const currentSection = document.querySelector(`[data-section="${this.currentStep}"]`);
+                const firstChild = currentSection.firstElementChild;
+                currentSection.insertBefore(message, firstChild.nextSibling);
+
+                // Remove message after 3 seconds
+                setTimeout(() => {
+                    if (message.parentNode) {
+                        message.remove();
+                    }
+                }, 3000);
+
+                // Scroll to top to show message
+                document.querySelector('.form-wrapper').scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+            }
+
             async handleSubmit(e) {
                 e.preventDefault();
                 
                 if (!this.validateCurrentStep()) {
-                    alert('Please fill in all required fields.');
+                    this.showValidationMessage();
                     return;
                 }
 
@@ -800,7 +953,7 @@
                 this.submitBtn.disabled = true;
 
                 // Simulate form submission
-                await new Promise(resolve => setTimeout(resolve, 1500));
+                await new Promise(resolve => setTimeout(resolve, 2000));
 
                 // Show success page
                 document.querySelectorAll('.form-section').forEach(section => {
@@ -811,9 +964,16 @@
 
                 // Update progress to 100%
                 this.progressFill.style.width = '100%';
+                this.stepIndicator.textContent = 'Complete!';
                 document.querySelectorAll('.step').forEach(step => {
                     step.classList.remove('active');
                     step.classList.add('completed');
+                });
+
+                // Scroll to top
+                document.querySelector('.form-wrapper').scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
                 });
             }
         }
@@ -823,100 +983,35 @@
             new AuditForm();
         });
 
-        // Add some visual enhancements
+        // Add smooth transitions and focus management
         document.addEventListener('DOMContentLoaded', () => {
-            // Animate checkbox/radio selections
-            document.querySelectorAll('.checkbox-item input, .radio-item input').forEach(input => {
-                input.addEventListener('change', function() {
-                    const item = this.closest('.checkbox-item, .radio-item');
-                    if (this.checked) {
-                        item.style.borderColor = '#1e40af';
-                        item.style.backgroundColor = '#eff6ff';
-                    } else {
-                        item.style.borderColor = '#e2e8f0';
-                        item.style.backgroundColor = '#f8fafc';
-                    }
-                });
-            });
-
-            // Add form field focus effects
+            // Focus management for accessibility
             document.querySelectorAll('input, select, textarea').forEach(field => {
                 field.addEventListener('focus', function() {
                     this.parentElement.style.transform = 'translateY(-2px)';
+                    this.parentElement.style.transition = 'transform 0.2s ease';
                 });
                 
                 field.addEventListener('blur', function() {
                     this.parentElement.style.transform = 'translateY(0)';
                 });
             });
+
+            // Keyboard navigation support
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
+                    e.preventDefault();
+                    const nextBtn = document.getElementById('next-btn');
+                    const submitBtn = document.getElementById('submit-btn');
+                    
+                    if (nextBtn.style.display !== 'none' && !nextBtn.disabled) {
+                        nextBtn.click();
+                    } else if (submitBtn.style.display !== 'none' && !submitBtn.disabled) {
+                        submitBtn.click();
+                    }
+                }
+            });
         });
     </script>
 </body>
 </html>
-
-                    <div class="form-group">
-                        <label>Email Address <span class="required">*</span></label>
-                        <input type="email" name="email" required placeholder="your@email.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Phone Number <span class="required">*</span></label>
-                        <input type="tel" name="phone" required placeholder="(412) 555-0123">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Company Name <span class="required">*</span></label>
-                        <input type="text" name="company" required placeholder="Your Company Name">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Website (if applicable)</label>
-                        <input type="url" name="website" placeholder="https://yourwebsite.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Preferred Meeting Type <span class="required">*</span></label>
-                        <select name="meetingType" required>
-                            <option value="">Select meeting preference</option>
-                            <option value="video-call">Video Call (Zoom/Teams)</option>
-                            <option value="phone-call">Phone Call</option>
-                            <option value="in-person">In-Person Meeting (Pittsburgh area)</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Step 2: Business Details -->
-                <div class="form-section" data-section="2">
-                    <h2 class="section-title">Tell us about your business</h2>
-                    <p class="section-subtitle">This helps us understand your scale and recommend the right automation approach.</p>
-                    
-                    <div class="form-group">
-                        <label>Number of Employees <span class="required">*</span></label>
-                        <select name="employees" required>
-                            <option value="">Select business size</option>
-                            <option value="1-5">1-5 employees</option>
-                            <option value="6-15">6-15 employees</option>
-                            <option value="16-30">16-30 employees</option>
-                            <option value="31-50">31-50 employees</option>
-                            <option value="51-100">51-100 employees</option>
-                            <option value="100+">100+ employees</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Industry <span class="required">*</span></label>
-                        <select name="industry" required>
-                            <option value="">Select your industry</option>
-                            <option value="real-estate">Real Estate</option>
-                            <option value="healthcare">Healthcare/Medical</option>
-                            <option value="auto-repair">Auto Repair/Automotive</option>
-                            <option value="professional-services">Professional Services</option>
-                            <option value="construction">Construction/Trades</option>
-                            <option value="manufacturing">Manufacturing</option>
-                            <option value="retail">Retail</option>
-                            <option value="restaurant">Restaurant/Food Service</option>
-                            <option value="legal">Legal Services</option>
-                            <option value="accounting">Accounting/Finance</option>
-                            <option value="other">Other</option>
-                        </select>
-                    
