@@ -1196,16 +1196,13 @@
                 
                 <div class="contact-form slide-in-right">
                     <h3>Request Your Free Automation Audit</h3>
-                    <form id="audit-form">
-                        <!-- Basic Contact Information -->
+                    <form id="simple-contact-form">
                         <input type="text" placeholder="Your Name *" required>
                         <input type="email" placeholder="Email Address *" required>
-                        <input type="tel" placeholder="Phone Number">
+                        <input type="tel" placeholder="Phone Number *" required>
                         <input type="text" placeholder="Company Name *" required>
-                        <input type="text" placeholder="Website (if applicable)">
                         
-                        <!-- Business Details -->
-                        <label style="display: block; margin: 1rem 0 0.5rem 0; font-weight: 600;">Number of Employees *</label>
+                        <label style="display: block; margin: 1rem 0 0.5rem 0; font-weight: 600;">Business Size *</label>
                         <select required>
                             <option value="">Select business size</option>
                             <option value="1-5">1-5 employees</option>
@@ -1216,145 +1213,13 @@
                             <option value="100+">100+ employees</option>
                         </select>
 
-                        <label style="display: block; margin: 1rem 0 0.5rem 0; font-weight: 600;">What industry are you in? *</label>
-                        <select required>
-                            <option value="">Select industry</option>
-                            <option value="real-estate">Real Estate</option>
-                            <option value="healthcare">Healthcare/Medical</option>
-                            <option value="auto-repair">Auto Repair</option>
-                            <option value="professional-services">Professional Services</option>
-                            <option value="construction">Construction/Trades</option>
-                            <option value="manufacturing">Manufacturing</option>
-                            <option value="retail">Retail</option>
-                            <option value="restaurant">Restaurant/Food Service</option>
-                            <option value="other">Other</option>
-                        </select>
-
-                        <label style="display: block; margin: 1rem 0 0.5rem 0; font-weight: 600;">What's your budget range for automation? *</label>
-                        <select required>
-                            <option value="">Select budget range</option>
-                            <option value="under-3k">Under $3,000</option>
-                            <option value="3k-7k">$3,000 - $7,000</option>
-                            <option value="7k-12k">$7,000 - $12,000</option>
-                            <option value="12k+">$12,000+</option>
-                            <option value="not-sure">Not sure yet</option>
-                        </select>
-
-                        <label style="display: block; margin: 1rem 0 0.5rem 0; font-weight: 600;">What's your preferred meeting type? *</label>
-                        <select required>
-                            <option value="">Select meeting preference</option>
-                            <option value="video-call">Video Call (Zoom/Teams)</option>
-                            <option value="phone-call">Phone Call</option>
-                            <option value="in-person">In-Person Meeting</option>
-                            <option value="email-first">Email Discussion First</option>
-                        </select>
-
-                        <label style="display: block; margin: 1rem 0 0.5rem 0; font-weight: 600;">What areas take up the most time? (Select all that apply) *</label>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 1rem;">
-                            <label style="display: flex; align-items: center; font-weight: normal;">
-                                <input type="checkbox" value="data-entry" style="margin-right: 0.5rem;">
-                                Data Entry
-                            </label>
-                            <label style="display: flex; align-items: center; font-weight: normal;">
-                                <input type="checkbox" value="client-communication" style="margin-right: 0.5rem;">
-                                Client Communication
-                            </label>
-                            <label style="display: flex; align-items: center; font-weight: normal;">
-                                <input type="checkbox" value="scheduling" style="margin-right: 0.5rem;">
-                                Scheduling/Appointments
-                            </label>
-                            <label style="display: flex; align-items: center; font-weight: normal;">
-                                <input type="checkbox" value="invoicing" style="margin-right: 0.5rem;">
-                                Invoicing/Payments
-                            </label>
-                            <label style="display: flex; align-items: center; font-weight: normal;">
-                                <input type="checkbox" value="reporting" style="margin-right: 0.5rem;">
-                                Reports/Analytics
-                            </label>
-                            <label style="display: flex; align-items: center; font-weight: normal;">
-                                <input type="checkbox" value="document-management" style="margin-right: 0.5rem;">
-                                Document Management
-                            </label>
-                            <label style="display: flex; align-items: center; font-weight: normal;">
-                                <input type="checkbox" value="lead-management" style="margin-right: 0.5rem;">
-                                Lead Management
-                            </label>
-                            <label style="display: flex; align-items: center; font-weight: normal;">
-                                <input type="checkbox" value="inventory" style="margin-right: 0.5rem;">
-                                Inventory Management
-                            </label>
-                        </div>
-
-                        <label style="display: block; margin: 1rem 0 0.5rem 0; font-weight: 600;">What tools do you currently use? (Select all that apply) *</label>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 1rem;">
-                            <label style="display: flex; align-items: center; font-weight: normal;">
-                                <input type="checkbox" value="excel" style="margin-right: 0.5rem;">
-                                Excel
-                            </label>
-                            <label style="display: flex; align-items: center; font-weight: normal;">
-                                <input type="checkbox" value="google-sheets" style="margin-right: 0.5rem;">
-                                Google Sheets
-                            </label>
-                            <label style="display: flex; align-items: center; font-weight: normal;">
-                                <input type="checkbox" value="quickbooks" style="margin-right: 0.5rem;">
-                                QuickBooks
-                            </label>
-                            <label style="display: flex; align-items: center; font-weight: normal;">
-                                <input type="checkbox" value="crm" style="margin-right: 0.5rem;">
-                                CRM Software
-                            </label>
-                            <label style="display: flex; align-items: center; font-weight: normal;">
-                                <input type="checkbox" value="email" style="margin-right: 0.5rem;">
-                                Email (Outlook/Gmail)
-                            </label>
-                            <label style="display: flex; align-items: center; font-weight: normal;">
-                                <input type="checkbox" value="slack" style="margin-right: 0.5rem;">
-                                Slack/Teams
-                            </label>
-                            <label style="display: flex; align-items: center; font-weight: normal;">
-                                <input type="checkbox" value="wordpress" style="margin-right: 0.5rem;">
-                                WordPress
-                            </label>
-                            <label style="display: flex; align-items: center; font-weight: normal;">
-                                <input type="checkbox" value="industry-specific" style="margin-right: 0.5rem;">
-                                Industry-Specific Software
-                            </label>
-                        </div>
-
-                        <label style="display: block; margin: 1rem 0 0.5rem 0; font-weight: 600;">If automation saved you time, how would you use it? *</label>
-                        <div style="margin-bottom: 1rem;">
-                            <label style="display: flex; align-items: center; font-weight: normal; margin: 0.3rem 0;">
-                                <input type="radio" name="time-usage" value="serve-more-clients" style="margin-right: 0.5rem;">
-                                Serve more clients
-                            </label>
-                            <label style="display: flex; align-items: center; font-weight: normal; margin: 0.3rem 0;">
-                                <input type="radio" name="time-usage" value="reduce-overtime" style="margin-right: 0.5rem;">
-                                Reduce overtime/workload on staff
-                            </label>
-                            <label style="display: flex; align-items: center; font-weight: normal; margin: 0.3rem 0;">
-                                <input type="radio" name="time-usage" value="improve-experience" style="margin-right: 0.5rem;">
-                                Improve customer experience
-                            </label>
-                            <label style="display: flex; align-items: center; font-weight: normal; margin: 0.3rem 0;">
-                                <input type="radio" name="time-usage" value="focus-growth" style="margin-right: 0.5rem;">
-                                Focus on strategy/growth
-                            </label>
-                            <label style="display: flex; align-items: center; font-weight: normal; margin: 0.3rem 0;">
-                                <input type="radio" name="time-usage" value="other" style="margin-right: 0.5rem;">
-                                Other
-                            </label>
-                        </div>
-
-                        <label style="display: block; margin: 1rem 0 0.5rem 0; font-weight: 600;">What's your biggest process frustration?</label>
-                        <textarea placeholder="Describe what slows your team down or causes the most headaches..." style="height: 80px; margin-bottom: 1rem;"></textarea>
-
-                        <label style="display: block; margin: 1rem 0 0.5rem 0; font-weight: 600;">If your business doubled tomorrow, what process would struggle most?</label>
-                        <textarea placeholder="Tell us what would break first if you had twice the customers/work..." style="height: 80px; margin-bottom: 1rem;"></textarea>
-
-                        <label style="display: block; margin: 1rem 0 0.5rem 0; font-weight: 600;">What's one process you wish ran automatically?</label>
-                        <textarea placeholder="Describe something you wish would happen without anyone touching it..." style="height: 80px; margin-bottom: 1rem;"></textarea>
-
-                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Request Free Audit</button>
+                        <textarea placeholder="Brief description of your biggest operational challenge..." style="height: 80px; margin-bottom: 1rem;"></textarea>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Schedule Free Audit</button>
+                        
+                        <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; color: #666;">
+                            We'll send you a detailed questionnaire to prepare for your audit
+                        </p>
                     </form>
                 </div>
             </div>
@@ -1476,33 +1341,18 @@
             });
         });
 
-        // Form submission handler
-        document.querySelector('#audit-form').addEventListener('submit', function(e) {
+        // Form submission handler (simplified)
+        document.querySelector('#simple-contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Validate required checkboxes
-            const timeAreasChecked = document.querySelectorAll('input[type="checkbox"][value]:checked').length;
-            const toolsChecked = document.querySelectorAll('input[type="checkbox"][value]:checked').length;
-            const timeUsageSelected = document.querySelector('input[name="time-usage"]:checked');
-            
-            if (timeAreasChecked === 0) {
-                alert('Please select at least one area that takes up your time.');
-                return;
-            }
-            
-            if (!timeUsageSelected) {
-                alert('Please select how you would use the time saved from automation.');
-                return;
-            }
             
             // Show success message
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Submitted Successfully!';
+            submitBtn.textContent = 'Request Sent!';
             submitBtn.style.background = '#10b981';
             
             setTimeout(() => {
-                alert('Thank you! We\'ll review your responses and contact you within 24 hours to schedule your free automation audit.');
+                alert('Thank you! We\'ll send you a detailed questionnaire and contact you within 24 hours to schedule your free automation audit.');
                 this.reset();
                 submitBtn.textContent = originalText;
                 submitBtn.style.background = '';
