@@ -693,7 +693,7 @@
                     <div class="stat-label">App integrations available</div>
                 </div>
                 <div class="stat fade-in">
-                    <div class="stat-number">300-900%</div>
+                    <div class="stat-number">150-300%</div>
                     <div class="stat-label">Expected ROI within first year</div>
                 </div>
             </div>
@@ -724,7 +724,7 @@
                         <strong>Business Impact:</strong><br>
                         • Save 5-10 hours weekly<br>
                         • Automate 2-3 critical processes<br>
-                        • <strong>Expected ROI: 300-500%</strong>
+                        • <strong>Expected ROI: 150-200%</strong>
                     </div>
                     
                     <a href="booking.html" class="btn btn-primary" style="width: 100%; margin-top: 1rem; text-align: center;">Get Started</a>
@@ -749,7 +749,7 @@
                         <strong>Business Impact:</strong><br>
                         • Save 15-25 hours weekly<br>
                         • Automate multiple connected processes<br>
-                        • <strong>Expected ROI: 400-700%</strong>
+                        • <strong>Expected ROI: 180-250%</strong>
                     </div>
                     
                     <a href="booking.html" class="btn btn-primary" style="width: 100%; margin-top: 1rem; text-align: center;">Get Started</a>
@@ -774,7 +774,7 @@
                         <strong>Business Impact:</strong><br>
                         • Save 30-50 hours weekly<br>
                         • Transform multiple departments<br>
-                        • <strong>Expected ROI: 500-900%</strong>
+                        • <strong>Expected ROI: 200-300%</strong>
                     </div>
                     
                     <a href="booking.html" class="btn btn-primary" style="width: 100%; margin-top: 1rem; text-align: center;">Get Started</a>
@@ -1122,6 +1122,28 @@
                 <div class="form-group">
                     <label>Average hourly wage:</label>
                     <input type="number" id="hourly-wage" value="25" min="10" max="100" onchange="calculateROI()">
+                </div>
+                
+                <div class="form-group">
+                    <label>How often do errors occur in your current processes?</label>
+                    <select id="error-rate" onchange="calculateROI()">
+                        <option value="1">Rarely (less than 5% of tasks)</option>
+                        <option value="2">Occasionally (5-10% of tasks)</option>
+                        <option value="3" selected>Sometimes (10-20% of tasks)</option>
+                        <option value="4">Frequently (20-30% of tasks)</option>
+                        <option value="5">Very often (30%+ of tasks)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>How complex are your current manual processes?</label>
+                    <select id="process-complexity" onchange="calculateROI()">
+                        <option value="1">Simple (mostly data entry)</option>
+                        <option value="2">Basic (some decision making)</option>
+                        <option value="3" selected>Moderate (multiple steps, some logic)</option>
+                        <option value="4">Complex (many steps, approvals, integrations)</option>
+                        <option value="5">Very complex (highly customized workflows)</option>
+                    </select>
                 </div>
                 
                 <div class="roi-result" id="roi-result">
