@@ -26,7 +26,7 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e40af 0%, #3730a3 100%);
             color: white;
             padding: 1rem 0;
             position: fixed;
@@ -76,7 +76,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e40af 0%, #3730a3 100%);
             color: white;
             padding: 120px 0 80px;
             text-align: center;
@@ -117,12 +117,12 @@
         }
 
         .btn-primary {
-            background: #ff6b6b;
+            background: #ef4444;
             color: white;
         }
 
         .btn-primary:hover {
-            background: #ee5a52;
+            background: #dc2626;
             transform: translateY(-2px);
         }
 
@@ -159,7 +159,7 @@
         .stat-number {
             font-size: 2.5rem;
             font-weight: bold;
-            color: #667eea;
+            color: #1e40af;
             margin-bottom: 0.5rem;
         }
 
@@ -199,7 +199,7 @@
         }
 
         .service-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e40af 0%, #3730a3 100%);
             border: 1px solid #e2e8f0;
             border-radius: 12px;
             padding: 2rem;
@@ -216,7 +216,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e40af 0%, #3730a3 100%);
         }
 
         .service-card:hover {
@@ -233,7 +233,7 @@
         .service-price {
             font-size: 2rem;
             font-weight: bold;
-            color: #FFD700;
+            color: #fbbf24;
             margin-bottom: 1rem;
         }
 
@@ -257,7 +257,7 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: #FFD700;
+            color: #fbbf24;
             font-weight: bold;
         }
 
@@ -270,7 +270,7 @@
         }
 
         .service-impact strong {
-            color: #FFD700;
+            color: #fbbf24;
         }
 
         /* Platforms Section */
@@ -302,7 +302,7 @@
         .platform-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e40af 0%, #3730a3 100%);
             border-radius: 12px;
             margin: 0 auto 1rem;
             display: flex;
@@ -315,7 +315,7 @@
         /* ROI Calculator */
         .roi-calculator {
             padding: 80px 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e40af 0%, #3730a3 100%);
             color: white;
         }
 
@@ -393,10 +393,106 @@
 
         .testimonial-author {
             font-weight: bold;
-            color: #667eea;
+            color: #1e40af;
         }
 
-        /* Contact Section */
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .faq-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .faq-category {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .faq-category h3 {
+            color: #1e40af;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: white;
+            padding: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #f1f5f9;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.2rem;
+            color: #1e40af;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 1rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+            padding: 1rem;
+        }
+
+        .faq-answer p {
+            margin-bottom: 0.8rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .faq-answer ul {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .faq-answer li {
+            margin-bottom: 0.3rem;
+            color: #555;
+        }
+
+        .feature-highlight {
+            background: #e0e7ff;
+            padding: 0.8rem;
+            border-radius: 6px;
+            margin: 0.5rem 0;
+        }
+
+        .feature-highlight strong {
+            color: #1e40af;
+        }
         .contact {
             padding: 80px 0;
             background: #f8fafc;
@@ -560,6 +656,7 @@
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#platforms">Platforms</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#calculator">ROI Calculator</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -611,8 +708,7 @@
             
             <div class="services-grid">
                 <div class="service-card fade-in">
-                    <h3 class="service-title">Starter Package</h3>
-                    <div class="service-price">$2,000</div>
+                    <h3>Efficiency Essentials</h3>
                     <p>Perfect for small businesses seeking initial automation wins</p>
                     
                     <ul class="service-features">
@@ -621,7 +717,7 @@
                         <li>Basic dashboard creation</li>
                         <li>User training sessions</li>
                         <li>Documentation package</li>
-                        <li>3 months support ($250/month value)</li>
+                        <li>3 months support included</li>
                     </ul>
                     
                     <div class="service-impact">
@@ -634,10 +730,9 @@
                     <a href="#contact" class="btn btn-primary" style="width: 100%; margin-top: 1rem; text-align: center;">Get Started</a>
                 </div>
 
-                <div class="service-card fade-in" style="border: 3px solid #667eea; transform: scale(1.05);">
-                    <div style="background: #667eea; color: white; text-align: center; margin: -2rem -2rem 2rem -2rem; padding: 0.5rem; font-weight: bold;">MOST POPULAR</div>
-                    <h3 class="service-title">Growth Package</h3>
-                    <div class="service-price">$5,000</div>
+                <div class="service-card fade-in" style="border: 3px solid #ef4444; transform: scale(1.05);">
+                    <div style="background: #ef4444; color: white; text-align: center; margin: -2rem -2rem 2rem -2rem; padding: 0.5rem; font-weight: bold;">MOST POPULAR</div>
+                    <h3>Growth Builder</h3>
                     <p>Comprehensive automation for growing businesses</p>
                     
                     <ul class="service-features">
@@ -647,7 +742,7 @@
                         <li>ROI tracking dashboard</li>
                         <li>Integration with existing tools</li>
                         <li>Comprehensive training program</li>
-                        <li>3 months support ($500/month value)</li>
+                        <li>3 months support included</li>
                     </ul>
                     
                     <div class="service-impact">
@@ -661,8 +756,7 @@
                 </div>
 
                 <div class="service-card fade-in">
-                    <h3 class="service-title">Enterprise Lite</h3>
-                    <div class="service-price">$9,000</div>
+                    <h3>Enterprise Lite</h3>
                     <p>Comprehensive automation for established businesses</p>
                     
                     <ul class="service-features">
@@ -673,7 +767,7 @@
                         <li>Advanced real-time dashboards</li>
                         <li>Department-specific automation</li>
                         <li>Change management support</li>
-                        <li>3 months support ($1,000/month value)</li>
+                        <li>3 months support included</li>
                     </ul>
                     
                     <div class="service-impact">
@@ -723,11 +817,291 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Get answers to common questions about our automation tools and services</p>
+            
+            <div class="faq-categories">
+                <!-- Automation Platforms Category -->
+                <div class="faq-category fade-in">
+                    <h3>🛠️ Automation Platforms & Features</h3>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            What can Zapier actually do for my business?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Zapier is the backbone of most automation workflows. It can:</p>
+                            <ul>
+                                <li><strong>Connect 8,000+ apps</strong> including Gmail, Slack, QuickBooks, CRM systems</li>
+                                <li><strong>Trigger actions automatically</strong> when specific events happen</li>
+                                <li><strong>Process data</strong> between different systems without manual copying</li>
+                                <li><strong>Send notifications</strong> via email, SMS, or team chat when tasks complete</li>
+                            </ul>
+                            <div class="feature-highlight">
+                                <strong>Example:</strong> When a new customer signs up on your website, automatically create them in your CRM, send a welcome email, add them to your mailing list, and notify your sales team.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            How is Airtable different from Excel or Google Sheets?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Airtable combines the simplicity of spreadsheets with database power:</p>
+                            <ul>
+                                <li><strong>Relational data:</strong> Link records across different tables</li>
+                                <li><strong>Rich field types:</strong> Attachments, checkboxes, dropdowns, formulas</li>
+                                <li><strong>Multiple views:</strong> Grid, calendar, kanban, gallery views of same data</li>
+                                <li><strong>Built-in automation:</strong> Trigger actions when records are created/updated</li>
+                                <li><strong>Real-time collaboration:</strong> Multiple people can work simultaneously</li>
+                                <li><strong>API access:</strong> Connects with other tools seamlessly</li>
+                            </ul>
+                            <div class="feature-highlight">
+                                <strong>Perfect for:</strong> Customer databases, project tracking, inventory management, employee records
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            What makes Make (formerly Integromat) special?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Make excels at complex automation scenarios:</p>
+                            <ul>
+                                <li><strong>Visual workflow builder:</strong> See your automation logic clearly</li>
+                                <li><strong>Advanced data manipulation:</strong> Transform, filter, and route data</li>
+                                <li><strong>Error handling:</strong> Built-in retry logic and error reporting</li>
+                                <li><strong>Conditional logic:</strong> "If this, then that" with multiple conditions</li>
+                                <li><strong>Webhook support:</strong> Real-time triggers from any system</li>
+                                <li><strong>Bulk operations:</strong> Process hundreds of records efficiently</li>
+                            </ul>
+                            <div class="feature-highlight">
+                                <strong>Best for:</strong> Complex multi-step processes, data synchronization, advanced business logic
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            What is Activepieces and when do you use it?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Activepieces is our open-source automation platform for:</p>
+                            <ul>
+                                <li><strong>Custom integrations:</strong> Connect systems that others can't</li>
+                                <li><strong>Data privacy:</strong> Keep sensitive data on your own servers</li>
+                                <li><strong>Cost efficiency:</strong> No per-task pricing for high-volume automation</li>
+                                <li><strong>Custom connectors:</strong> Build integrations for proprietary software</li>
+                                <li><strong>Enterprise features:</strong> Advanced security and compliance options</li>
+                            </ul>
+                            <div class="feature-highlight">
+                                <strong>Ideal for:</strong> Businesses with unique software, high-volume processes, or strict data requirements
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Impact Category -->
+                <div class="faq-category fade-in">
+                    <h3>💼 Business Impact & ROI</h3>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            How quickly will I see results from automation?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Results timeline varies by package:</p>
+                            <ul>
+                                <li><strong>Week 1-2:</strong> Initial workflows go live</li>
+                                <li><strong>Month 1:</strong> 60-80% of time savings realized</li>
+                                <li><strong>Month 2-3:</strong> Full optimization and training complete</li>
+                                <li><strong>Month 6:</strong> ROI guarantee point - you'll see measurable returns</li>
+                            </ul>
+                            <div class="feature-highlight">
+                                <strong>Guarantee:</strong> If you don't see measurable ROI within 6 months, we'll work at no charge until you do.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            What if my team resists the new automated processes?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Change management is included in all our packages:</p>
+                            <ul>
+                                <li><strong>Gradual rollout:</strong> Introduce automation step-by-step</li>
+                                <li><strong>Hands-on training:</strong> We train your team personally</li>
+                                <li><strong>Clear benefits:</strong> Show exactly how automation helps each person</li>
+                                <li><strong>Support period:</strong> 3 months of questions and adjustments included</li>
+                                <li><strong>Documentation:</strong> Easy-to-follow guides for all processes</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Can automation work with my existing software?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! Our platforms connect with virtually any business software:</p>
+                            <ul>
+                                <li><strong>Popular systems:</strong> QuickBooks, Salesforce, Office 365, Google Workspace</li>
+                                <li><strong>Industry-specific:</strong> Most CRM, ERP, and specialized industry tools</li>
+                                <li><strong>Custom software:</strong> We can connect proprietary systems via APIs</li>
+                                <li><strong>Legacy systems:</strong> Even older software can often be integrated</li>
+                            </ul>
+                            <div class="feature-highlight">
+                                <strong>Free assessment:</strong> We'll evaluate your current software during the free audit
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Implementation & Support Category -->
+                <div class="faq-category fade-in">
+                    <h3>🚀 Implementation & Support</h3>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            How long does implementation take?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Timeline depends on your selected package:</p>
+                            <ul>
+                                <li><strong>Starter Package:</strong> 2-3 weeks implementation</li>
+                                <li><strong>Growth Package:</strong> 4-6 weeks implementation</li>
+                                <li><strong>Enterprise Lite:</strong> 6-8 weeks implementation</li>
+                            </ul>
+                            <p>Each includes:</p>
+                            <ul>
+                                <li>Discovery and planning (1 week)</li>
+                                <li>Development and testing (varies by complexity)</li>
+                                <li>Training and rollout (1 week)</li>
+                                <li>3 months support period</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            What happens if something breaks?
+                        </div>
+                        <div class="faq-answer">
+                            <p>We provide comprehensive support:</p>
+                            <ul>
+                                <li><strong>Monitoring:</strong> We actively monitor all automations</li>
+                                <li><strong>Quick fixes:</strong> Most issues resolved within 24 hours</li>
+                                <li><strong>Backup plans:</strong> Fallback procedures for critical processes</li>
+                                <li><strong>Regular maintenance:</strong> Proactive updates and optimization</li>
+                                <li><strong>Documentation:</strong> Troubleshooting guides for common issues</li>
+                            </ul>
+                            <div class="feature-highlight">
+                                <strong>Support included:</strong> 3 months with every package, ongoing support available
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Do I need technical skills to use the automation?
+                        </div>
+                        <div class="faq-answer">
+                            <p>No technical skills required:</p>
+                            <ul>
+                                <li><strong>User-friendly interfaces:</strong> Point-and-click operation</li>
+                                <li><strong>Comprehensive training:</strong> We teach you everything</li>
+                                <li><strong>Clear documentation:</strong> Step-by-step guides with screenshots</li>
+                                <li><strong>Ongoing support:</strong> Help available when you need it</li>
+                            </ul>
+                            <p>You'll learn to:</p>
+                            <ul>
+                                <li>Monitor automation performance</li>
+                                <li>Make simple updates and changes</li>
+                                <li>Add new data and records</li>
+                                <li>Run reports and view dashboards</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing & Packages Category -->
+                <div class="faq-category fade-in">
+                    <h3>💰 Pricing & Packages</h3>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Are there ongoing costs beyond the package price?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Platform subscription costs (paid directly to providers):</p>
+                            <ul>
+                                <li><strong>Zapier:</strong> $20-75/month (based on usage)</li>
+                                <li><strong>Airtable:</strong> $24/user/month for pro features</li>
+                                <li><strong>Make:</strong> $10-30/month (based on operations)</li>
+                                <li><strong>Total estimated:</strong> $50-150/month depending on package</li>
+                            </ul>
+                            <p>Optional ongoing services:</p>
+                            <ul>
+                                <li><strong>Support retainer:</strong> $250-1,000/month (recommended)</li>
+                                <li><strong>Monitoring service:</strong> $400/month</li>
+                                <li><strong>Quarterly optimization:</strong> $500/session</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Can I upgrade my package later?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely! We encourage growth:</p>
+                            <ul>
+                                <li><strong>Seamless upgrades:</strong> Build on existing automation</li>
+                                <li><strong>Credit existing investment:</strong> Previous work counts toward upgrade</li>
+                                <li><strong>Natural progression:</strong> Starter → Growth → Enterprise Lite</li>
+                                <li><strong>Add-on services:</strong> Expand capabilities without full upgrade</li>
+                            </ul>
+                            <div class="feature-highlight">
+                                <strong>Most clients</strong> start with Growth Package and add features over time
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            What's included in the free automation audit?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Comprehensive 90-minute assessment including:</p>
+                            <ul>
+                                <li><strong>Process mapping:</strong> Document your current workflows</li>
+                                <li><strong>Opportunity identification:</strong> Find automation possibilities</li>
+                                <li><strong>ROI projection:</strong> Calculate potential time and cost savings</li>
+                                <li><strong>Platform recommendations:</strong> Best tools for your needs</li>
+                                <li><strong>Implementation roadmap:</strong> Step-by-step plan</li>
+                                <li><strong>Custom proposal:</strong> Tailored package recommendation</li>
+                            </ul>
+                            <div class="feature-highlight">
+                                <strong>No obligation:</strong> Valuable insights even if you don't proceed
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ROI Calculator -->
     <section id="calculator" class="roi-calculator">
         <div class="container">
-            <h2 class="section-title">Calculate Your Automation ROI</h2>
-            <p class="section-subtitle">See how much time and money you could save with our automation solutions.</p>
+            <h2 class="section-title" style="color: white;">Calculate Your Automation ROI</h2>
+            <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9);">See how much time and money you could save with our automation solutions.</p>
             
             <div class="calculator-form">
                 <div class="form-group">
@@ -795,19 +1169,19 @@
                     <p>Our comprehensive audit includes:</p>
                     <ul style="list-style-type: none; padding-left: 0;">
                         <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
-                            <span style="position: absolute; left: 0; color: #4ade80; font-weight: bold;">✓</span>
+                            <span style="position: absolute; left: 0; color: #ef4444; font-weight: bold;">✓</span>
                             Process assessment and opportunity identification
                         </li>
                         <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
-                            <span style="position: absolute; left: 0; color: #4ade80; font-weight: bold;">✓</span>
+                            <span style="position: absolute; left: 0; color: #ef4444; font-weight: bold;">✓</span>
                             ROI projection and automation roadmap
                         </li>
                         <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
-                            <span style="position: absolute; left: 0; color: #4ade80; font-weight: bold;">✓</span>
+                            <span style="position: absolute; left: 0; color: #ef4444; font-weight: bold;">✓</span>
                             Platform recommendations
                         </li>
                         <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
-                            <span style="position: absolute; left: 0; color: #4ade80; font-weight: bold;">✓</span>
+                            <span style="position: absolute; left: 0; color: #ef4444; font-weight: bold;">✓</span>
                             Implementation timeline and cost estimate
                         </li>
                     </ul>
@@ -821,20 +1195,166 @@
                 </div>
                 
                 <div class="contact-form slide-in-right">
-                    <form>
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Email Address" required>
+                    <h3>Request Your Free Automation Audit</h3>
+                    <form id="audit-form">
+                        <!-- Basic Contact Information -->
+                        <input type="text" placeholder="Your Name *" required>
+                        <input type="email" placeholder="Email Address *" required>
                         <input type="tel" placeholder="Phone Number">
-                        <input type="text" placeholder="Company Name">
+                        <input type="text" placeholder="Company Name *" required>
+                        <input type="text" placeholder="Website (if applicable)">
+                        
+                        <!-- Business Details -->
+                        <label style="display: block; margin: 1rem 0 0.5rem 0; font-weight: 600;">Number of Employees *</label>
                         <select required>
-                            <option value="">Select Business Size</option>
-                            <option value="5-10">5-10 employees</option>
-                            <option value="10-20">10-20 employees</option>
-                            <option value="20-50">20-50 employees</option>
-                            <option value="50+">50+ employees</option>
+                            <option value="">Select business size</option>
+                            <option value="1-5">1-5 employees</option>
+                            <option value="6-15">6-15 employees</option>
+                            <option value="16-30">16-30 employees</option>
+                            <option value="31-50">31-50 employees</option>
+                            <option value="51-100">51-100 employees</option>
+                            <option value="100+">100+ employees</option>
                         </select>
-                        <textarea placeholder="Tell us about your biggest operational challenges..."></textarea>
-                        <button type="submit" class="btn btn-primary">Request Free Audit</button>
+
+                        <label style="display: block; margin: 1rem 0 0.5rem 0; font-weight: 600;">What industry are you in? *</label>
+                        <select required>
+                            <option value="">Select industry</option>
+                            <option value="real-estate">Real Estate</option>
+                            <option value="healthcare">Healthcare/Medical</option>
+                            <option value="auto-repair">Auto Repair</option>
+                            <option value="professional-services">Professional Services</option>
+                            <option value="construction">Construction/Trades</option>
+                            <option value="manufacturing">Manufacturing</option>
+                            <option value="retail">Retail</option>
+                            <option value="restaurant">Restaurant/Food Service</option>
+                            <option value="other">Other</option>
+                        </select>
+
+                        <label style="display: block; margin: 1rem 0 0.5rem 0; font-weight: 600;">What's your budget range for automation? *</label>
+                        <select required>
+                            <option value="">Select budget range</option>
+                            <option value="under-3k">Under $3,000</option>
+                            <option value="3k-7k">$3,000 - $7,000</option>
+                            <option value="7k-12k">$7,000 - $12,000</option>
+                            <option value="12k+">$12,000+</option>
+                            <option value="not-sure">Not sure yet</option>
+                        </select>
+
+                        <label style="display: block; margin: 1rem 0 0.5rem 0; font-weight: 600;">What's your preferred meeting type? *</label>
+                        <select required>
+                            <option value="">Select meeting preference</option>
+                            <option value="video-call">Video Call (Zoom/Teams)</option>
+                            <option value="phone-call">Phone Call</option>
+                            <option value="in-person">In-Person Meeting</option>
+                            <option value="email-first">Email Discussion First</option>
+                        </select>
+
+                        <label style="display: block; margin: 1rem 0 0.5rem 0; font-weight: 600;">What areas take up the most time? (Select all that apply) *</label>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 1rem;">
+                            <label style="display: flex; align-items: center; font-weight: normal;">
+                                <input type="checkbox" value="data-entry" style="margin-right: 0.5rem;">
+                                Data Entry
+                            </label>
+                            <label style="display: flex; align-items: center; font-weight: normal;">
+                                <input type="checkbox" value="client-communication" style="margin-right: 0.5rem;">
+                                Client Communication
+                            </label>
+                            <label style="display: flex; align-items: center; font-weight: normal;">
+                                <input type="checkbox" value="scheduling" style="margin-right: 0.5rem;">
+                                Scheduling/Appointments
+                            </label>
+                            <label style="display: flex; align-items: center; font-weight: normal;">
+                                <input type="checkbox" value="invoicing" style="margin-right: 0.5rem;">
+                                Invoicing/Payments
+                            </label>
+                            <label style="display: flex; align-items: center; font-weight: normal;">
+                                <input type="checkbox" value="reporting" style="margin-right: 0.5rem;">
+                                Reports/Analytics
+                            </label>
+                            <label style="display: flex; align-items: center; font-weight: normal;">
+                                <input type="checkbox" value="document-management" style="margin-right: 0.5rem;">
+                                Document Management
+                            </label>
+                            <label style="display: flex; align-items: center; font-weight: normal;">
+                                <input type="checkbox" value="lead-management" style="margin-right: 0.5rem;">
+                                Lead Management
+                            </label>
+                            <label style="display: flex; align-items: center; font-weight: normal;">
+                                <input type="checkbox" value="inventory" style="margin-right: 0.5rem;">
+                                Inventory Management
+                            </label>
+                        </div>
+
+                        <label style="display: block; margin: 1rem 0 0.5rem 0; font-weight: 600;">What tools do you currently use? (Select all that apply) *</label>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 1rem;">
+                            <label style="display: flex; align-items: center; font-weight: normal;">
+                                <input type="checkbox" value="excel" style="margin-right: 0.5rem;">
+                                Excel
+                            </label>
+                            <label style="display: flex; align-items: center; font-weight: normal;">
+                                <input type="checkbox" value="google-sheets" style="margin-right: 0.5rem;">
+                                Google Sheets
+                            </label>
+                            <label style="display: flex; align-items: center; font-weight: normal;">
+                                <input type="checkbox" value="quickbooks" style="margin-right: 0.5rem;">
+                                QuickBooks
+                            </label>
+                            <label style="display: flex; align-items: center; font-weight: normal;">
+                                <input type="checkbox" value="crm" style="margin-right: 0.5rem;">
+                                CRM Software
+                            </label>
+                            <label style="display: flex; align-items: center; font-weight: normal;">
+                                <input type="checkbox" value="email" style="margin-right: 0.5rem;">
+                                Email (Outlook/Gmail)
+                            </label>
+                            <label style="display: flex; align-items: center; font-weight: normal;">
+                                <input type="checkbox" value="slack" style="margin-right: 0.5rem;">
+                                Slack/Teams
+                            </label>
+                            <label style="display: flex; align-items: center; font-weight: normal;">
+                                <input type="checkbox" value="wordpress" style="margin-right: 0.5rem;">
+                                WordPress
+                            </label>
+                            <label style="display: flex; align-items: center; font-weight: normal;">
+                                <input type="checkbox" value="industry-specific" style="margin-right: 0.5rem;">
+                                Industry-Specific Software
+                            </label>
+                        </div>
+
+                        <label style="display: block; margin: 1rem 0 0.5rem 0; font-weight: 600;">If automation saved you time, how would you use it? *</label>
+                        <div style="margin-bottom: 1rem;">
+                            <label style="display: flex; align-items: center; font-weight: normal; margin: 0.3rem 0;">
+                                <input type="radio" name="time-usage" value="serve-more-clients" style="margin-right: 0.5rem;">
+                                Serve more clients
+                            </label>
+                            <label style="display: flex; align-items: center; font-weight: normal; margin: 0.3rem 0;">
+                                <input type="radio" name="time-usage" value="reduce-overtime" style="margin-right: 0.5rem;">
+                                Reduce overtime/workload on staff
+                            </label>
+                            <label style="display: flex; align-items: center; font-weight: normal; margin: 0.3rem 0;">
+                                <input type="radio" name="time-usage" value="improve-experience" style="margin-right: 0.5rem;">
+                                Improve customer experience
+                            </label>
+                            <label style="display: flex; align-items: center; font-weight: normal; margin: 0.3rem 0;">
+                                <input type="radio" name="time-usage" value="focus-growth" style="margin-right: 0.5rem;">
+                                Focus on strategy/growth
+                            </label>
+                            <label style="display: flex; align-items: center; font-weight: normal; margin: 0.3rem 0;">
+                                <input type="radio" name="time-usage" value="other" style="margin-right: 0.5rem;">
+                                Other
+                            </label>
+                        </div>
+
+                        <label style="display: block; margin: 1rem 0 0.5rem 0; font-weight: 600;">What's your biggest process frustration?</label>
+                        <textarea placeholder="Describe what slows your team down or causes the most headaches..." style="height: 80px; margin-bottom: 1rem;"></textarea>
+
+                        <label style="display: block; margin: 1rem 0 0.5rem 0; font-weight: 600;">If your business doubled tomorrow, what process would struggle most?</label>
+                        <textarea placeholder="Tell us what would break first if you had twice the customers/work..." style="height: 80px; margin-bottom: 1rem;"></textarea>
+
+                        <label style="display: block; margin: 1rem 0 0.5rem 0; font-weight: 600;">What's one process you wish ran automatically?</label>
+                        <textarea placeholder="Describe something you wish would happen without anyone touching it..." style="height: 80px; margin-bottom: 1rem;"></textarea>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Request Free Audit</button>
                     </form>
                 </div>
             </div>
@@ -851,10 +1371,10 @@
                 </div>
                 
                 <div class="footer-section">
-                    <h3>Services</h3>
-                    <a href="#services">Starter Package</a>
-                    <a href="#services">Growth Package</a>
-                    <a href="#services">Enterprise Lite</a>
+                    <h3>Resources</h3>
+                    <a href="#services">Service Packages</a>
+                    <a href="#platforms">Automation Platforms</a>
+                    <a href="#faq">Frequently Asked Questions</a>
                     <a href="#calculator">ROI Calculator</a>
                 </div>
                 
@@ -881,6 +1401,26 @@
     </footer>
 
     <script>
+        // FAQ Toggle Function
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const isActive = answer.classList.contains('active');
+            
+            // Close all other FAQs in the same category
+            const category = element.closest('.faq-category');
+            const allAnswers = category.querySelectorAll('.faq-answer');
+            const allQuestions = category.querySelectorAll('.faq-question');
+            
+            allAnswers.forEach(ans => ans.classList.remove('active'));
+            allQuestions.forEach(q => q.classList.remove('active'));
+            
+            // Toggle current FAQ
+            if (!isActive) {
+                answer.classList.add('active');
+                element.classList.add('active');
+            }
+        }
+
         // Mobile Menu Toggle
         function toggleMobileMenu() {
             const navLinks = document.querySelector('.nav-links');
@@ -937,9 +1477,36 @@
         });
 
         // Form submission handler
-        document.querySelector('form').addEventListener('submit', function(e) {
+        document.querySelector('#audit-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your interest! We\'ll contact you within 24 hours to schedule your free automation audit.');
+            
+            // Validate required checkboxes
+            const timeAreasChecked = document.querySelectorAll('input[type="checkbox"][value]:checked').length;
+            const toolsChecked = document.querySelectorAll('input[type="checkbox"][value]:checked').length;
+            const timeUsageSelected = document.querySelector('input[name="time-usage"]:checked');
+            
+            if (timeAreasChecked === 0) {
+                alert('Please select at least one area that takes up your time.');
+                return;
+            }
+            
+            if (!timeUsageSelected) {
+                alert('Please select how you would use the time saved from automation.');
+                return;
+            }
+            
+            // Show success message
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Submitted Successfully!';
+            submitBtn.style.background = '#10b981';
+            
+            setTimeout(() => {
+                alert('Thank you! We\'ll review your responses and contact you within 24 hours to schedule your free automation audit.');
+                this.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.style.background = '';
+            }, 2000);
         });
 
         // Intersection Observer for animations
@@ -981,12 +1548,12 @@
 
         // Add floating action button for quick contact
         const floatingBtn = document.createElement('div');
-        floatingBtn.innerHTML = `
+                    floatingBtn.innerHTML = `
             <a href="#contact" style="
                 position: fixed;
                 bottom: 30px;
                 right: 30px;
-                background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+                background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
                 color: white;
                 border-radius: 50%;
                 width: 60px;
