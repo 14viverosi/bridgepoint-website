@@ -5,11 +5,12 @@
             
             // Set resource type for tracking
             modal.setAttribute('data-resource', resourceType);
+            document.getElementById('resource-type-field').value = resourceType;
             
             // Update modal title based on resource
             const titles = {
                 'checklist': 'Automation Readiness Checklist',
-                'processes': '10 Processes to Automate',
+                'processes': '9 Processes to Automate',
                 'calculator': 'ROI Calculator Workbook'
             };
             
@@ -1377,7 +1378,7 @@
 
                 <div class="resource-card fade-in">
                     <div class="resource-icon">⚡</div>
-                    <h3>10 Processes Every Business Should Automate</h3>
+                    <h3>9 Processes Every Business Should Automate</h3>
                     <p>Discover the most common manual processes that waste time across all industries, plus step-by-step automation strategies for each one.</p>
                     <ul class="resource-features">
                         <li>Industry-specific examples</li>
@@ -1411,11 +1412,13 @@
             <h3>Get Your Free Resource</h3>
             <p>Enter your details to receive your free automation guide plus our weekly automation tips newsletter.</p>
             
-            <form id="resource-form">
-                <input type="text" placeholder="First Name *" required>
-                <input type="email" placeholder="Email Address *" required>
-                <input type="text" placeholder="Company Name">
-                <select>
+            <form id="resource-form" action="https://hooks.zapier.com/hooks/catch/24452556/uh0yft2/" method="POST">
+                <input type="hidden" name="resource_type" id="resource-type-field">
+                <input type="hidden" name="form_source" value="website_resource_download">
+                <input type="text" name="first_name" placeholder="First Name *" required>
+                <input type="email" name="email" placeholder="Email Address *" required>
+                <input type="text" name="company" placeholder="Company Name">
+                <select name="business_size">
                     <option value="">Business Size (Optional)</option>
                     <option value="1-5">1-5 employees</option>
                     <option value="6-15">6-15 employees</option>
@@ -1425,7 +1428,7 @@
                 
                 <div style="margin: 1rem 0;">
                     <label style="display: flex; align-items: center; font-size: 0.9rem;">
-                        <input type="checkbox" style="margin-right: 0.5rem;" checked>
+                        <input type="checkbox" name="newsletter_signup" value="yes" style="margin-right: 0.5rem;" checked>
                         Yes, send me weekly automation tips and case studies
                     </label>
                 </div>
@@ -2037,7 +2040,7 @@
             // Update modal title based on resource
             const titles = {
                 'checklist': 'Automation Readiness Checklist',
-                'processes': '10 Processes to Automate',
+                'processes': '9 Processes to Automate',
                 'calculator': 'ROI Calculator Workbook'
             };
             
