@@ -1,11 +1,16 @@
-        // Resource download functionality
+        // Resource download functionality with debugging
         function downloadResource(resourceType) {
+            console.log('downloadResource called with:', resourceType);
+            
             const modal = document.getElementById('download-modal');
             modal.style.display = 'flex';
             
             // Set resource type for tracking
             modal.setAttribute('data-resource', resourceType);
-            document.getElementById('resource-type-field').value = resourceType;
+            const hiddenField = document.getElementById('resource-type-field');
+            hiddenField.value = resourceType;
+            
+            console.log('Hidden field value set to:', hiddenField.value);
             
             // Update modal title based on resource
             const titles = {
