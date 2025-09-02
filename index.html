@@ -2034,55 +2034,6 @@
                 element.classList.add('active');
             }
         }
-
-        // Resource download functionality
-        function downloadResource(resourceType) {
-            const modal = document.getElementById('download-modal');
-            modal.style.display = 'flex';
-            
-            // Set resource type for tracking
-            modal.setAttribute('data-resource', resourceType);
-            
-            // Update modal title based on resource
-            const titles = {
-                'checklist': 'Automation Readiness Checklist',
-                'processes': '10 Processes to Automate',
-                'calculator': 'ROI Calculator Workbook'
-            };
-            
-            const title = modal.querySelector('h3');
-            title.textContent = `Get Your Free ${titles[resourceType]}`;
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('download-modal');
-            modal.style.display = 'none';
-        }
-
-        // Handle resource form submission
-        document.addEventListener('DOMContentLoaded', function() {
-            const resourceForm = document.getElementById('resource-form');
-            if (resourceForm) {
-                resourceForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Show success message
-                    const modal = document.getElementById('download-modal');
-                    const resourceType = modal.getAttribute('data-resource');
-                    
-                    modal.querySelector('.modal-content').innerHTML = `
-                        <div style="text-align: center; padding: 2rem;">
-                            <div style="font-size: 4rem; margin-bottom: 1rem;">✅</div>
-                            <h3>Resource Sent!</h3>
-                            <p style="margin: 1rem 0;">Check your email for the download link. We've also added you to our weekly automation tips newsletter.</p>
-                            <button class="btn btn-primary" onclick="closeModal()" style="margin-top: 1rem;">Close</button>
-                        </div>
-                    `;
-                    
-                    // Auto-close after 3 seconds
-                    setTimeout(closeModal, 3000);
-                });
-            }
             
             // Close modal when clicking outside
             window.addEventListener('click', function(e) {
