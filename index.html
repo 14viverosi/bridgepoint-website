@@ -15,7 +15,7 @@
             // Update modal title based on resource
             const titles = {
                 'checklist': 'Automation Readiness Checklist',
-                'processes': '9 Processes to Automate',
+                'processes': '10 Processes to Automate',
                 'calculator': 'ROI Calculator Workbook'
             };
             
@@ -1384,7 +1384,7 @@
 
                 <div class="resource-card fade-in">
                     <div class="resource-icon">⚡</div>
-                    <h3>9 Processes Every Business Should Automate</h3>
+                    <h3>10 Processes Every Business Should Automate</h3>
                     <p>Discover the most common manual processes that waste time across all industries, plus step-by-step automation strategies for each one.</p>
                     <ul class="resource-features">
                         <li>Industry-specific examples</li>
@@ -1825,55 +1825,61 @@
     </section>
 
     <!-- ROI Calculator -->
-<section id="calculator" class="roi-calculator">
-      <div class="container">
-        <h2 class="section-title" style="color:white;">Calculate Your Automation ROI</h2>
-        <p class="section-subtitle" style="color:rgba(255,255,255,0.9);">See how much time and money you could save with our automation solutions.</p>
-        <div class="calculator-form">
-          <div class="form-group">
-            <label>Number of Employees:</label>
-            <select id="employees">
-              <option value="5">5-10 employees</option>
-              <option value="15">10-20 employees</option>
-              <option value="30">20-50 employees</option>
-              <option value="75">50-100 employees</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Hours spent on manual tasks per week:</label>
-            <input type="number" id="manual-hours" value="20" min="1" max="100">
-          </div>
-          <div class="form-group">
-            <label>Average hourly wage:</label>
-            <input type="number" id="hourly-wage" value="25" min="10" max="100">
-          </div>
-          <div class="form-group">
-            <label>How often do errors occur in your current processes?</label>
-            <select id="error-rate">
-              <option value="1">Rarely (less than 5% of tasks)</option>
-              <option value="2">Occasionally (5-10% of tasks)</option>
-              <option value="3" selected>Sometimes (10-20% of tasks)</option>
-              <option value="4">Frequently (20-30% of tasks)</option>
-              <option value="5">Very often (30%+ of tasks)</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>How complex are your current manual processes?</label>
-            <select id="process-complexity">
-              <option value="1">Simple (mostly data entry)</option>
-              <option value="2">Basic (some decision making)</option>
-              <option value="3" selected>Moderate (multiple steps, some logic)</option>
-              <option value="4">Complex (many steps, approvals, integrations)</option>
-              <option value="5">Very complex (highly customized workflows)</option>
-            </select>
-          </div>
-          <div class="roi-result" id="roi-result">
-            <h3>Your Potential Savings</h3>
-            <div style="font-size:2rem;margin:1rem 0;"><strong>$10,400</strong> saved annually</div>
-            <div>ROI: <strong>420%</strong> in first year with our Growth Package</div>
-          </div>
+    <section id="calculator" class="roi-calculator">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Calculate Your Automation ROI</h2>
+            <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9);">See how much time and money you could save with our automation solutions.</p>
+            
+            <div class="calculator-form">
+                <div class="form-group">
+                    <label>Number of Employees:</label>
+                    <select id="employees" onchange="calculateROI()">
+                        <option value="5">5-10 employees</option>
+                        <option value="15">10-20 employees</option>
+                        <option value="30">20-50 employees</option>
+                        <option value="75">50-100 employees</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Hours spent on manual tasks per week:</label>
+                    <input type="number" id="manual-hours" value="20" min="1" max="100" onchange="calculateROI()">
+                </div>
+                
+                <div class="form-group">
+                    <label>Average hourly wage:</label>
+                    <input type="number" id="hourly-wage" value="25" min="10" max="100" onchange="calculateROI()">
+                </div>
+                
+                <div class="form-group">
+                    <label>How often do errors occur in your current processes?</label>
+                    <select id="error-rate" onchange="calculateROI()">
+                        <option value="1">Rarely (less than 5% of tasks)</option>
+                        <option value="2">Occasionally (5-10% of tasks)</option>
+                        <option value="3" selected>Sometimes (10-20% of tasks)</option>
+                        <option value="4">Frequently (20-30% of tasks)</option>
+                        <option value="5">Very often (30%+ of tasks)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>How complex are your current manual processes?</label>
+                    <select id="process-complexity" onchange="calculateROI()">
+                        <option value="1">Simple (mostly data entry)</option>
+                        <option value="2">Basic (some decision making)</option>
+                        <option value="3" selected>Moderate (multiple steps, some logic)</option>
+                        <option value="4">Complex (many steps, approvals, integrations)</option>
+                        <option value="5">Very complex (highly customized workflows)</option>
+                    </select>
+                </div>
+                
+                <div class="roi-result" id="roi-result">
+                    <h3>Your Potential Savings</h3>
+                    <div style="font-size: 2rem; margin: 1rem 0;"><strong>$10,400</strong> saved annually</div>
+                    <div>ROI: <strong>420%</strong> in first year with our Growth Package</div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- Testimonials -->
@@ -2040,7 +2046,7 @@
             // Update modal title based on resource
             const titles = {
                 'checklist': 'Automation Readiness Checklist',
-                'processes': '9 Processes to Automate',
+                'processes': '10 Processes to Automate',
                 'calculator': 'ROI Calculator Workbook'
             };
             
@@ -2140,47 +2146,29 @@
             const navLinks = document.querySelector('.nav-links');
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         }
-    /** ROI Calculator wiring */
-      ['employees','manual-hours','hourly-wage','error-rate','process-complexity'].forEach(id=>{
-        const el = document.getElementById(id);
-        if(!el) return;
-        el.addEventListener('change', calculateROI);
-        if (el.tagName === 'INPUT') el.addEventListener('input', calculateROI);
-      });
-      calculateROI();
-    /** ROI calculation model */
-    function calculateROI(){
-      const n = +val('employees', 5);
-      const hours = +val('manual-hours', 20);
-      const wage = +val('hourly-wage', 25);
-      const err = +val('error-rate', 3);         // 1..5
-      const cx  = +val('process-complexity', 3); // 1..5
 
-      // 35% baseline savings; +3% each step of error/complexity; cap 70%
-      const savePct = Math.min(0.35 + (err-1)*0.03 + (cx-1)*0.03, 0.70);
-      const weekly  = n * hours * wage * savePct;
-      const annual  = Math.round(weekly * 52);
-
-      const implCost = 5000; // anchor (Growth package)
-      const roiPct = Math.round(((annual - implCost) / implCost) * 100);
-
-      const out = document.getElementById('roi-result');
-      if (out){
-        out.innerHTML = `
-          <h3>Your Potential Savings</h3>
-          <div style="font-size:2rem;margin:1rem 0;"><strong>$${annual.toLocaleString()}</strong> saved annually</div>
-          <div>Estimated ROI: <strong>${roiPct}%</strong> in year one</div>
-        `;
-      }
-      track('roi_calculated', {annual, roiPct});
-    }
-    function val(id, fallback){ const el = document.getElementById(id); return el ? (el.value || fallback) : fallback; }
-
-    /** Minimal analytics */
-    function track(event, data={}){ window.dataLayer = window.dataLayer || []; data.event = event; window.dataLayer.push(data); }
-
-    /** ESC closes modal (accessibility) */
-    document.addEventListener('keydown', (e)=>{ if (e.key === 'Escape') closeModal(); });
+        // ROI Calculator
+        function calculateROI() {
+            const employees = parseInt(document.getElementById('employees').value);
+            const manualHours = parseInt(document.getElementById('manual-hours').value);
+            const hourlyWage = parseInt(document.getElementById('hourly-wage').value);
+            
+            // Calculate potential savings
+            const weeklyCost = manualHours * hourlyWage;
+            const annualCost = weeklyCost * 52;
+            
+            // Estimate automation savings (40-70% based on package)
+            const savingsPercentage = employees > 30 ? 0.7 : employees > 15 ? 0.6 : 0.4;
+            const annualSavings = Math.round(annualCost * savingsPercentage);
+            
+            // Determine recommended package cost
+            let packageCost = 2000;
+            if (employees > 30) packageCost = 9000;
+            else if (employees > 15) packageCost = 5000;
+            
+            // Calculate ROI
+            const roi = Math.round(((annualSavings - packageCost) / packageCost) * 100);
+            
             // Update display
             const resultDiv = document.getElementById('roi-result');
             resultDiv.innerHTML = `
